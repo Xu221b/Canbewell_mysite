@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <table border="1px">
+        <tr>
+            <th>original index</th>
+            {% for data in fbdata %}
+                <th>{{ data }}</th>
+            {% endfor %}
+
+            {% for index, record in fbdata.iterrows %}
+                <tr>
+                    <td>{{ index }}</td>
+                    {% for cell in record %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tr>
+    </table>
+{% endblock content %}
