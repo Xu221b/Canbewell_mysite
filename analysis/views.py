@@ -20,7 +20,6 @@ def firebase_date_range(startDate, endDate):
 
 
 def firebase_live_connection(date_list):
-    print(date_list)
     fbdata = pd.DataFrame()
     fbobject = firebase.FirebaseApplication("https://canbewell-uottawa.firebaseio.com/", None)
     fbdata_temp = fbobject.get("", "")
@@ -67,7 +66,6 @@ def home(request):
         if form.is_valid():
             start_date = form.cleaned_data['startDate']
             end_date = form.cleaned_data['endDate']
-            print(start_date, end_date)
             date_list = firebase_date_range(start_date, end_date)
             if date_list:
                 global fbdata
