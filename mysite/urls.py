@@ -16,15 +16,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import TemplateView
-from django.contrib.auth import views as auth_views
-from django.conf import settings
-from django.conf.urls.static import static
+
 
 urlpatterns = [
-    #path('', TemplateView.as_view(template_name='users/social_login.html')),
     path('', include('analysis.urls')),
     path('admin/', admin.site.urls),
     path('analysis/', include('analysis.urls')),
-    path('accounts/', include('allauth.urls')),
 ]

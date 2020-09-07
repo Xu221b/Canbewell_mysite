@@ -4,5 +4,9 @@ from . import views
 urlpatterns = [
     path('', views.home, name='analysis-home'),
     path('about/', views.about, name='analysis-about'),
-    path('download/', views.Download_csv, name='analysis-csv-download'),
+    path('login/', views.login, name='firebase-login'),
+    path('logout/', views.logout, name='firebase-logout'),
+    path('auto_test/', views.auto_test, name='analysis-test'),
+    path('viz/', views.viz, name='analysis-viz'),
+    path('download/', views.Download_csv, name='analysis-csv-download')
 ]
